@@ -1,5 +1,12 @@
 spring.datasource.url: jdbc:h2:file:./camunda-h2-database
 
-camunda.bpm.admin-user:
-  id: demo
-  password: demo
+camunda.bpm:
+  admin-user:
+    id: demo
+    password: demo
+
+  # Now this is properly nested under 'camunda.bpm' (2 spaces), NOT 'admin-user'
+  deployment-resource-pattern:
+    - classpath*:**/*.bpmn
+    - classpath*:**/*.dmn
+    - classpath*:**/*.form

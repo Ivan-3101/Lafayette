@@ -45,6 +45,21 @@
       <bpmn:incoming>Flow_1ko12lv</bpmn:incoming>
       <bpmn:outgoing>Flow_0zs978i</bpmn:outgoing>
     </bpmn:serviceTask>
+    <bpmn:boundaryEvent id="Event_1n4qmm8" cancelActivity="false" attachedToRef="Activity_0nfkml8">
+      <bpmn:outgoing>Flow_1ec646s</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_0jbpxtc">
+        <bpmn:timeCycle xsi:type="bpmn:tFormalExpression">R/PT1M</bpmn:timeCycle>
+      </bpmn:timerEventDefinition>
+    </bpmn:boundaryEvent>
+    <bpmn:sequenceFlow id="Flow_1ec646s" sourceRef="Event_1n4qmm8" targetRef="Activity_0xucfpp" />
+    <bpmn:userTask id="Activity_0xucfpp" name="Send letter back home to your wife">
+      <bpmn:incoming>Flow_1ec646s</bpmn:incoming>
+      <bpmn:outgoing>Flow_167dzhp</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="Event_1ph5hyi" name="Letter Sent">
+      <bpmn:incoming>Flow_167dzhp</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_167dzhp" sourceRef="Activity_0xucfpp" targetRef="Event_1ph5hyi" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Lafayette-process">
@@ -82,6 +97,19 @@
       <bpmndi:BPMNShape id="Activity_1gxpj00_di" bpmnElement="Activity_1mvt83a">
         <dc:Bounds x="620" y="80" width="100" height="80" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1wwx43e_di" bpmnElement="Activity_0xucfpp">
+        <dc:Bounds x="1050" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1ph5hyi_di" bpmnElement="Event_1ph5hyi">
+        <dc:Bounds x="1192" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1183" y="145" width="55" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1oojd7y_di" bpmnElement="Event_1n4qmm8">
+        <dc:Bounds x="972" y="209" width="36" height="36" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_1fp17al_di" bpmnElement="SequenceFlow_1fp17al">
         <di:waypoint x="178" y="267" />
         <di:waypoint x="270" y="267" />
@@ -89,14 +117,6 @@
       <bpmndi:BPMNEdge id="Flow_1f8uaq2_di" bpmnElement="Flow_1f8uaq2">
         <di:waypoint x="370" y="267" />
         <di:waypoint x="495" y="267" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1e02hvg_di" bpmnElement="Flow_1e02hvg">
-        <di:waypoint x="720" y="267" />
-        <di:waypoint x="795" y="267" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_08edjv9_di" bpmnElement="Flow_08edjv9">
-        <di:waypoint x="1020" y="267" />
-        <di:waypoint x="1122" y="267" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1viagl6_di" bpmnElement="Flow_1viagl6">
         <di:waypoint x="545" y="267" />
@@ -113,14 +133,31 @@
           <dc:Bounds x="553" y="123" width="40" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1e02hvg_di" bpmnElement="Flow_1e02hvg">
+        <di:waypoint x="720" y="267" />
+        <di:waypoint x="795" y="267" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0qmijby_di" bpmnElement="Flow_0qmijby">
         <di:waypoint x="845" y="267" />
         <di:waypoint x="920" y="267" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_08edjv9_di" bpmnElement="Flow_08edjv9">
+        <di:waypoint x="1020" y="267" />
+        <di:waypoint x="1122" y="267" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0zs978i_di" bpmnElement="Flow_0zs978i">
         <di:waypoint x="720" y="120" />
         <di:waypoint x="820" y="120" />
         <di:waypoint x="820" y="242" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ec646s_di" bpmnElement="Flow_1ec646s">
+        <di:waypoint x="990" y="209" />
+        <di:waypoint x="990" y="120" />
+        <di:waypoint x="1050" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_167dzhp_di" bpmnElement="Flow_167dzhp">
+        <di:waypoint x="1150" y="120" />
+        <di:waypoint x="1192" y="120" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

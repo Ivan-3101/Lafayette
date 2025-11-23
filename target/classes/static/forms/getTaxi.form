@@ -1,0 +1,56 @@
+{
+  "components": [
+    {
+      "label": "Pack Cash",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1ids4an",
+        "columns": null
+      },
+      "id": "Field_1p9iela",
+      "key": "money",
+      "description": "How much cash do you want to bring?",
+      "validate": {
+        "pattern": "^(?:0|[1-9][0-9]*)\\\\.[0-9]+$"
+      }
+    },
+    {
+      "label": "Where are you headed",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0gdr2g1",
+        "columns": null
+      },
+      "id": "Field_1qeubbr",
+      "key": "country",
+      "description": "Country you are going to",
+      "validate": {
+        "required": true,
+        "pattern": "America|France"
+      }
+    },
+    {
+      "label": "Enter price of Taxi",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0p59vjv",
+        "columns": null
+      },
+      "id": "Field_0t6489m",
+      "key": "taxiCost",
+      "description": "for tax reasons",
+      "validate": {
+        "pattern": "^(?:0|[1-9][0-9]*)\\\\.[0-9]+$"
+      }
+    }
+  ],
+  "type": "default",
+  "id": "get_taxi_form",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.39.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.23.0",
+  "schemaVersion": 19
+}
